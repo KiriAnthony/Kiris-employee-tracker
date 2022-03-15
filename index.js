@@ -1,6 +1,9 @@
 // import inquirer (after npm init -y and npm install inquirer)
 const inquirer = require('inquirer');
 
+// import console.table for use to display tables
+const cTable = require('console.table');
+
 // creates an array full of options for users first selection
 const startingOptions = ['View all departments', 'View all roles', 'View all employees', 'Add a department', 'Add a role', 'Add an employee', 'Update an employee role'];
 
