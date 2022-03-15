@@ -1,0 +1,23 @@
+{
+  "name": "kiris-employee-tracker",
+  "version": "1.0.0",
+  "description": "AS A business owner\r I WANT to be able to view and manage the departments, roles, and employees in my company\r SO THAT I can organize and plan my business",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiriAnthony/Kiris-employee-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KiriAnthony/Kiris-employee-tracker/issues"
+  },
+  "homepage": "https://github.com/KiriAnthony/Kiris-employee-tracker#readme",
+  "dependencies": {
+    "inquirer": "^8.2.1"
+  }
+}
