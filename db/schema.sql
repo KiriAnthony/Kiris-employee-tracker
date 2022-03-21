@@ -24,6 +24,12 @@ CREATE TABLE employee (
     last_name VARCHAR(30),
     role_id INT,
     manager_id INT,
-    CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE SET NULL
+    CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE SET NULL,
+    CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES manager(id) ON SET NULL
 );
 
+CREATE TABLE manager (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    role_id INT,
+    CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE SET NULL,
+)

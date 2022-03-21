@@ -18,10 +18,14 @@ const viewDepartment = () => {
     const sql = `SELECT * FROM department`;
 
     db.query(sql, (err, rows) => {
-        console.log(rows);
+        console.table(rows);
+        console.log('==================');
+        console.log(' ');
     });
     // ask user for next task
-    // firstPromtUser();
+    console.log('==================');
+    console.log(' ');
+    firstPromtUser();
 };
 
 const viewRoles = () => {
@@ -31,10 +35,14 @@ const viewRoles = () => {
     const sql = `SELECT * FROM role`;
 
     db.query(sql, (err, rows) => {
-        console.log(rows);
+        console.table(rows);
+        console.log('==================');
+        console.log(' ');
     });
     // ask user for next task
-    // firstPromtUser();
+    console.log('==================');
+    console.log(' ');
+    firstPromtUser();
 };
 
 const viewEmployees = () => {
@@ -44,37 +52,51 @@ const viewEmployees = () => {
     const sql = `SELECT * FROM employee`;
 
     db.query(sql, (err, rows) => {
-        console.log(rows);
+        console.table(rows);
+        console.log('==================');
+        console.log(' ');
     });
     // ask user for next task
-    // firstPromtUser();
+    console.log('==================');
+    console.log(' ');
+    firstPromtUser();
 };
 
 const addDepartment = () => {
     // function to prompt for name of department then department is added to database
     console.log("adding department");
+
     const sql = `INSERT INTO department (name) VALUES (?)`;
-    inquirer.prompt([
+
+    let userInput;
+
+    return inquirer.prompt([
         {
+            name: 'input',
             type: 'input',
             message: 'Please enter the name of the department'
         }
     ]).then(answer => {
-        const params = answer;
+        userInput = answer.input;
+        console.log(userInput);
+        db.query(sql, userInput, (err, rows) => {
+            console.log('The department has been added to the database!');
+        });
+    
+        // ask user for next task
+        console.log('==================');
+        console.log(' ');
+        firstPromtUser();
     });
-
-    db.query(sql, params, (err, rows) => {
-        //
-    });
-
-    // ask user for next task
-    // firstPromtUser();
 };
+
+
 
 const addRole = () => {
     // function to prompt for name, salary, and department then role added to database
     console.log("adding role");
     // ask user for next task
+    // console.log('==================');
     // firstPromtUser();
 };
 
@@ -82,6 +104,7 @@ const addEmployee = () => {
     // function to prompt for employee first/last name, role, and manager then employee added to database
     console.log("adding employee");
     // ask user for next task
+    // console.log('==================');
     // firstPromtUser();
 };
 
@@ -89,6 +112,7 @@ const updateEmployeeRole = () => {
     // function to select an employee to update and prompt for new role, info updated in database
     console.log("updating employee role");
     // ask user for next task
+    // console.log('==================');
     // firstPromtUser();
 };
 
